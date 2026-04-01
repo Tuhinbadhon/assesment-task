@@ -2,7 +2,9 @@
 
 import type { ApiResponse, Product, Category } from "@/app/types";
 
-const BASE_URL = "https://mm-assesment-server.vercel.app/api/v1";
+const BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL ||
+  "https://mm-assesment-server.vercel.app/api/v1";
 
 export async function getAllProducts(): Promise<Product[]> {
   const res = await fetch(`${BASE_URL}/products`, {

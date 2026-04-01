@@ -17,6 +17,9 @@ A Next.js 16 e-commerce storefront built with the App Router, React Server Compo
 # Install dependencies
 pnpm install
 
+# Copy environment variables
+cp .env.example .env.local
+
 # Start the development server (http://localhost:3000)
 pnpm dev
 
@@ -24,6 +27,14 @@ pnpm dev
 pnpm build
 pnpm start
 ```
+
+### Environment Variables
+
+Copy `.env.example` to `.env.local`. The only variable is:
+
+| Variable                   | Description  | Default                                         |
+| -------------------------- | ------------ | ----------------------------------------------- |
+| `NEXT_PUBLIC_API_BASE_URL` | API base URL | `https://mm-assesment-server.vercel.app/api/v1` |
 
 ### Available Scripts
 
@@ -99,4 +110,5 @@ All requests use `next: { revalidate: 60 }` for ISR-style caching (revalidated e
 6. **Navigation links are placeholder** — links like "Mobile Phones", "Laptops", etc. are non-functional since the assessment only requires the home page.
 7. **No authentication or cart logic** — the cart badge shows "0" and account/cart buttons are non-functional, as no auth or cart API was provided.
 8. **External images** — product images come from `fakestoreapi.com`. The Next.js image config (`next.config.ts`) allows this remote domain for `next/image` optimization.
+
 # assesment-task
