@@ -14,7 +14,8 @@ export default function Footer() {
   return (
     <footer className="bg-[#2d2d2d] text-gray-300">
       <div className="mx-auto max-w-300 px-4 py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* <div className="grid grid-cols-2 lg:grid-cols-4 gap-8"> */}
+        <div className="flex flex-wrap justify-between gap-y-8">
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-1 mb-4">
@@ -25,9 +26,9 @@ export default function Footer() {
                 store
               </span>
             </Link>
-            <p className="text-[12px] leading-relaxed text-gray-400 mb-4">
-              Best information about the company goes here but now lorem ipsum
-              is used.
+            <p className="text-xs max-w-sm leading-relaxed text-gray-400 mb-4">
+              WINstore,Your one-stop shop for unbeatable deals on electronics,
+              fashion, and home goods.
             </p>
             <div className="flex items-center gap-3">
               <a
@@ -35,35 +36,37 @@ export default function Footer() {
                 aria-label="Facebook"
                 className="w-7 h-7 rounded-full bg-[#3b5998] flex items-center justify-center hover:opacity-80 transition-opacity"
               >
-                <FaFacebookF className="text-white text-[10px]" />
+                <FaFacebookF className="text-white text-base" />
               </a>
               <a
                 href="#"
                 aria-label="Twitter"
                 className="w-7 h-7 rounded-full bg-[#1da1f2] flex items-center justify-center hover:opacity-80 transition-opacity"
               >
-                <FaTwitter className="text-white text-[10px]" />
+                <FaTwitter className="text-white text-base" />
               </a>
               <a
                 href="#"
                 aria-label="LinkedIn"
                 className="w-7 h-7 rounded-full bg-[#0077b5] flex items-center justify-center hover:opacity-80 transition-opacity"
               >
-                <FaLinkedinIn className="text-white text-[10px]" />
+                <FaLinkedinIn className="text-white text-base" />
               </a>
               <a
                 href="#"
                 aria-label="Instagram"
                 className="w-7 h-7 rounded-full bg-[#c13584] flex items-center justify-center hover:opacity-80 transition-opacity"
               >
-                <FaInstagram className="text-white text-[10px]" />
+                <FaInstagram className="text-white text-base" />
               </a>
             </div>
           </div>
 
           {/* Trending */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-4">Trending</h4>
+            <h4 className="font-semibold text-[#1cbbb4]  text-sm mb-4">
+              Trending
+            </h4>
             <ul className="space-y-2 text-[12px]">
               <li>
                 <a href="#" className="hover:text-[#1cbbb4] transition-colors">
@@ -95,7 +98,7 @@ export default function Footer() {
 
           {/* Information */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-4">
+            <h4 className="  text-[#1cbbb4] font-semibold text-sm mb-4">
               Information
             </h4>
             <ul className="space-y-2 text-[12px]">
@@ -129,7 +132,7 @@ export default function Footer() {
 
           {/* Customer Care */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-4">
+            <h4 className="text-[#1cbbb4]  font-semibold text-sm mb-4">
               Customer Care
             </h4>
             <ul className="space-y-2 text-[12px]">
@@ -164,9 +167,9 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-gray-600">
+      <div className=" bg-black">
         <div className="mx-auto max-w-300 px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[11px] text-gray-500">
+          <p className="text-xs text-gray-100">
             © 2021 WINstore. All Rights Reserved.
           </p>
           <div className="flex items-center gap-3">
