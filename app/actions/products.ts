@@ -1,5 +1,3 @@
-"use server";
-
 import type { ApiResponse, Product, Category } from "@/app/types";
 
 const BASE_URL =
