@@ -151,7 +151,7 @@ export default function HeroBanner() {
             </svg>
 
             {/* 40% off badge */}
-            <div className="absolute top-0 right-0 md:top-2 md:-right-2">
+            <div className="absolute top-0 right-0 md:top-2 md:right-16">
               <div className="relative">
                 <div className="absolute inset-0 bg-[#f5a623] rounded-full blur-md opacity-40 animate-pulse" />
                 <div className="relative bg-linear-to-br from-[#f5a623] to-[#e8941a] text-white rounded-full w-18.75 h-18.75 md:w-22.5 md:h-22.5 flex flex-col items-center justify-center shadow-xl">

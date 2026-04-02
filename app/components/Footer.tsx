@@ -170,7 +170,7 @@ export default function Footer() {
       <div className=" bg-black">
         <div className="mx-auto max-w-300 px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-100">
-            © 2021 WINstore. All Rights Reserved.
+            © {new Date().getFullYear()} WINstore. All Rights Reserved.
           </p>
           <div className="flex items-center gap-3">
             <FaCcVisa className="text-2xl text-gray-400 hover:text-white transition-colors" />
