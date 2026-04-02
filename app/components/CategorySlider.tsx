@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import {
   FaChevronLeft,
@@ -42,6 +42,14 @@ interface CategorySliderProps {
 export default function CategorySlider({ categories }: CategorySliderProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [showLeft, setShowLeft] = useState(false);
+  const [showRight, setShowRight] = useState(false);
+
+  const updateArrowVisibility = () => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, clientWidth, scrollWidth } = scrollRef.current;
+    setShowLeft(scrollLeft > 0);
+    setShowRight(scrollLeft + clientWidth < scrollWidth - 1);
+  };
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
@@ -53,9 +61,12 @@ export default function CategorySlider({ categories }: CategorySliderProps) {
   };
 
   const handleScroll = () => {
-    if (!scrollRef.current) return;
-    setShowLeft(scrollRef.current.scrollLeft > 0);
+    updateArrowVisibility();
   };
+
+  useEffect(() => {
+    updateArrowVisibility();
+  }, [categories]);
 
   return (
     <section className="mx-auto max-w-300 px-4 py-6">
@@ -114,13 +125,15 @@ export default function CategorySlider({ categories }: CategorySliderProps) {
         </div>
 
         {/* Right arrow */}
-        <button
-          onClick={() => scroll("right")}
-          className="absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 hover:scale-110 transition-all"
-          aria-label="Scroll right"
-        >
-          <FaChevronRight className="text-gray-600 text-xs" />
-        </button>
+        {showRight && (
+          <button
+            onClick={() => scroll("right")}
+            className="absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 hover:scale-110 transition-all"
+            aria-label="Scroll right"
+          >
+            <FaChevronRight className="text-gray-600 text-xs" />
+          </button>
+        )}
       </div>
     </section>
   );

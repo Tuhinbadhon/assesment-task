@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useTransition } from "react";
+import { useState, useTransition } from "react";
 import type { Product, Category } from "@/app/types";
 import { getProductsByCategory } from "@/app/actions/products";
 import ProductCard from "./ProductCard";
